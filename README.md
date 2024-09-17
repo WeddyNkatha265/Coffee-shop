@@ -1,6 +1,6 @@
 # Coffee-shop
 
-# Coffee Shop Domain Modeling
+# Coffee-shop Domain Modeling
 
 ## Objective
 Using object-oriented programming principles, create a Python application from scratch to model a Coffee Shop domain. This assessment will test your ability to design classes, implement methods, establish relationships between objects, and handle data appropriately.
