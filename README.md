@@ -83,4 +83,3 @@ The `Customer` and `Coffee` entities have a many-to-many relationship through th
 ## Conclusion
 This project will help you practice and demonstrate your understanding of object-oriented programming principles, class design, and relationships between objects. Good luck!
 ```
-
