@@ -33,6 +33,41 @@ The `Customer` and `Coffee` entities have a many-to-many relationship through th
   - Establish the relationships between these classes.
   - Determine the attributes and methods that each class will have.
   - Keep in mind the concept of a single source of truth for your data.
+  - In my Coffee Shop domain model, the single source of truth for the relationships between `Customer`, `Coffee`, and `Order` is the `Order` entity. 
+
+Here's why:
+- The `Order` entity holds references to both the `Customer` and the `Coffee` involved in each order.
+- It contains the details of the transaction, such as the `price`.
+- By querying the `Order` entity, you can derive all necessary information about which customers ordered which coffees and how many times.
+
+This ensures that all data about the interactions between customers and coffees is centralized in one place, maintaining consistency and integrity in your model. If you need to know which coffees a customer has ordered or which customers have ordered a specific coffee, you can always refer to the `Order` entity.
+
+  - Here's a simple sketch of the domain model for the Coffee Shop project. 
+```plaintext
++-----------+          +-----------+          +-----------+
+|  Customer |          |   Order   |          |   Coffee  |
++-----------+          +-----------+          +-----------+
+| - name    |<-------->| - customer|<-------->| - name    |
+|           |          | - coffee  |          |           |
+|           |          | - price   |          |           |
++-----------+          +-----------+          +-----------+
+      ^                      ^                      ^
+      |                      |                      |
+      +----------------------+----------------------+
+```
+
+### Explanation:
+- **Customer**: Represents a customer with a `name`.
+- **Order**: Represents an order with a `customer`, `coffee`, and `price`.
+- **Coffee**: Represents a coffee with a `name`.
+
+### Relationships:
+- A `Customer` can place many `Orders`.
+- A `Coffee` can have many `Orders`.
+- An `Order` belongs to one `Customer` and one `Coffee`.
+
+You can use this sketch to illustrate the relationships between the entities. 
+
 
 ### 3. Create Class Files
 - Create three Python files in your project directory:
